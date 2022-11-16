@@ -243,8 +243,7 @@ If pattern entered is found then resource will pass if not then resource will fa
         resource: aws.cloudtrail
         filters:
         - type: log-metric-filter-pattern
-          required_pattern:
-          "{ ($.eventName = "ConsoleLogin") && ($.additionalEventData.MFAUsed != "Yes") }"
+          required_pattern: "{ ($.eventName = "ConsoleLogin") }"
 
 .. container:: toggle
 

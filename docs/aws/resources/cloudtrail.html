@@ -5638,8 +5638,7 @@ against a locked version (requires use of is-locked filter).</p>
 <span class="w">    </span><span class="nt">resource</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aws.cloudtrail</span><span class="w"></span>
 <span class="w">    </span><span class="nt">filters</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">log-metric-filter-pattern</span><span class="w"></span>
-<span class="w">      </span><span class="nt">required_pattern</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="s">&quot;{</span><span class="nv"> </span><span class="s">($.eventName</span><span class="nv"> </span><span class="s">=</span><span class="nv"> </span><span class="s">&quot;</span><span class="l l-Scalar l-Scalar-Plain">ConsoleLogin&quot;) &amp;&amp; ($.additionalEventData.MFAUsed != &quot;Yes&quot;) }&quot;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">required_pattern</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{</span><span class="nv"> </span><span class="s">($.eventName</span><span class="nv"> </span><span class="s">=</span><span class="nv"> </span><span class="s">&quot;</span><span class="l l-Scalar l-Scalar-Plain">ConsoleLogin&quot;) }&quot;</span><span class="w"></span>
 </pre></div>
 </div>
 <div class="toggle docutils container">
