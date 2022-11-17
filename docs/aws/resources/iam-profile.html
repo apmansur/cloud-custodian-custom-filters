@@ -5469,6 +5469,7 @@
 <div><ul class="simple">
 <li><p><a class="reference internal" href="aws-common-filters.html#aws-common-filters-event"><span class="std std-ref">event</span></a></p></li>
 <li><p><a class="reference internal" href="aws-common-filters.html#aws-common-filters-finding"><span class="std std-ref">finding</span></a></p></li>
+<li><p><a class="reference internal" href="#aws-iam-profile-filters-has-specific-managed-policy"><span class="std std-ref">has-specific-managed-policy</span></a></p></li>
 <li><p><a class="reference internal" href="aws-common-filters.html#aws-common-filters-ops-item"><span class="std std-ref">ops-item</span></a></p></li>
 <li><p><a class="reference internal" href="aws-common-filters.html#aws-common-filters-reduce"><span class="std std-ref">reduce</span></a></p></li>
 <li><p><a class="reference internal" href="#aws-iam-profile-filters-unused"><span class="std std-ref">unused</span></a></p></li>
@@ -5476,6 +5477,39 @@
 <li><p><a class="reference internal" href="aws-common-filters.html#aws-common-filters-value"><span class="std std-ref">value</span></a></p></li>
 </ul>
 </div></blockquote>
+<section id="has-specific-managed-policy">
+<span id="aws-iam-profile-filters-has-specific-managed-policy"></span><h3>has-specific-managed-policy<a class="headerlink" href="#has-specific-managed-policy" title="Permalink to this headline">¶</a></h3>
+<dl class="simple">
+<dt>Filter an IAM instance profile that contains an IAM role that has a specific managed IAM</dt><dd><p>policy. If an IAM instance profile does not contain an IAM role, then it will be treated
+as not having the policy.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Example</dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">policies</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">iam-profile-has-admin-policy</span><span class="w"></span>
+<span class="w">    </span><span class="nt">resource</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">iam-profile</span><span class="w"></span>
+<span class="w">    </span><span class="nt">filters</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">has-specific-managed-policy</span><span class="w"></span>
+<span class="w">        </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">admin-policy</span><span class="w"></span>
+</pre></div>
+</div>
+<div class="toggle docutils container">
+<div class="header docutils container" style=""></div><div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">properties</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">enum</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">has-specific-managed-policy</span><span class="w"></span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="nt">required</span><span class="p">:</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">type</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<p>Permissions - iam:ListAttachedRolePolicies</p>
+</section>
 <section id="unused">
 <span id="aws-iam-profile-filters-unused"></span><h3>unused<a class="headerlink" href="#unused" title="Permalink to this headline">¶</a></h3>
 <p>Filter IAM profiles that are not being used</p>

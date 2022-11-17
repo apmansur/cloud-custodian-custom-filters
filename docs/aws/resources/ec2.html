@@ -5474,6 +5474,7 @@
 <li><p><a class="reference internal" href="#aws-ec2-filters-ephemeral"><span class="std std-ref">ephemeral</span></a></p></li>
 <li><p><a class="reference internal" href="aws-common-filters.html#aws-common-filters-event"><span class="std std-ref">event</span></a></p></li>
 <li><p><a class="reference internal" href="aws-common-filters.html#aws-common-filters-finding"><span class="std std-ref">finding</span></a></p></li>
+<li><p><a class="reference internal" href="#aws-ec2-filters-has-specific-managed-policy"><span class="std std-ref">has-specific-managed-policy</span></a></p></li>
 <li><p><a class="reference internal" href="aws-common-filters.html#aws-common-filters-health-event"><span class="std std-ref">health-event</span></a></p></li>
 <li><p><a class="reference internal" href="#aws-ec2-filters-image"><span class="std std-ref">image</span></a></p></li>
 <li><p><a class="reference internal" href="#aws-ec2-filters-image-age"><span class="std std-ref">image-age</span></a></p></li>
@@ -5650,6 +5651,39 @@ root device)</p>
 </pre></div>
 </div>
 </div>
+</section>
+<section id="has-specific-managed-policy">
+<span id="aws-ec2-filters-has-specific-managed-policy"></span><h3>has-specific-managed-policy<a class="headerlink" href="#has-specific-managed-policy" title="Permalink to this headline">¶</a></h3>
+<dl class="simple">
+<dt>Filter an EC2 instance that has an IAM instance profile that contains an IAM role that has</dt><dd><p>a specific managed IAM policy. If an EC2 instance does not have a profile or the profile
+does not contain an IAM role, then it will be treated as not having the policy.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Example</dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">policies</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ec2-instance-has-admin-policy</span><span class="w"></span>
+<span class="w">    </span><span class="nt">resource</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ec2</span><span class="w"></span>
+<span class="w">    </span><span class="nt">filters</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">has-specific-managed-policy</span><span class="w"></span>
+<span class="w">        </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">admin-policy</span><span class="w"></span>
+</pre></div>
+</div>
+<div class="toggle docutils container">
+<div class="header docutils container" style=""></div><div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">properties</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">enum</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">has-specific-managed-policy</span><span class="w"></span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="nt">required</span><span class="p">:</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">type</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<p>Permissions - iam:GetInstanceProfile, iam:ListInstanceProfiles, iam:ListAttachedRolePolicies</p>
 </section>
 <section id="image">
 <span id="aws-ec2-filters-image"></span><h3>image<a class="headerlink" href="#image" title="Permalink to this headline">¶</a></h3>
