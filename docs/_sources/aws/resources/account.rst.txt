@@ -199,6 +199,8 @@ in the current region, either as a multi region trail or as a trail with it as t
                 global-events: true
                 multi-region: true
                 running: true
+                include-management-events: true
+                log-metric-filter-pattern: "{ ($.eventName = "ConsoleLogin") }"
 
 .. container:: toggle
 
@@ -217,9 +219,13 @@ in the current region, either as a multi region trail or as a trail with it as t
         type: boolean
       global-events:
         type: boolean
+      include-management-events:
+        type: boolean
       kms:
         type: boolean
       kms-key:
+        type: string
+      log-metric-filter-pattern:
         type: string
       multi-region:
         type: boolean
@@ -236,7 +242,7 @@ in the current region, either as a multi region trail or as a trail with it as t
 
 
 
-Permissions - cloudtrail:DescribeTrails, cloudtrail:GetTrailStatus
+Permissions - cloudtrail:DescribeTrails, cloudtrail:GetTrailStatus, cloudtrail:GetEventSelectors, cloudwatch:DescribeAlarms, logs:DescribeMetricFilters, sns:ListSubscriptions
 
 
 .. _aws.account.filters.check-config:

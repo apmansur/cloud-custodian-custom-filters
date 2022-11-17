@@ -24,8 +24,6 @@ Filters
 
   - :ref:`json-diff <aws.cloudtrail.filters.json-diff>`
 
-  - :ref:`log-metric-filter-pattern <aws.cloudtrail.filters.log-metric-filter-pattern>`
-
   - :ref:`marked-for-op <aws.common.filters.marked-for-op>`
   
   - :ref:`ops-item <aws.common.filters.ops-item>`
@@ -226,49 +224,6 @@ against a locked version (requires use of is-locked filter).
 
 
 Permissions - config:GetResourceConfigHistory
-
-
-.. _aws.cloudtrail.filters.log-metric-filter-pattern:
-
-log-metric-filter-pattern
-+++++++++++++++++++++++++
-If pattern entered is found then resource will pass if not then resource will fail
-
-:example:
-
-.. code-block:: yaml
-
-    policies:
-      - name: log-metric-filter-pattern
-        resource: aws.cloudtrail
-        filters:
-        - type: log-metric-filter-pattern
-          required_pattern: "{ ($.eventName = "ConsoleLogin") }"
-
-.. container:: toggle
-
-  
-
-  .. raw:: html
-     
-    <div class="header docutils container" style=""></div>
-
-  .. code-block:: yaml
-
-    properties:
-      required_pattern:
-        type: string
-      type:
-        enum:
-        - log-metric-filter-pattern
-    required:
-    - required_pattern
-    - type
-
-
-
-
-Permissions - cloudtrail:DescribeTrails, cloudwatch:DescribeAlarms, logs:DescribeMetricFilters, sns:ListSubscriptions
 
 
 .. _aws.cloudtrail.filters.status:
