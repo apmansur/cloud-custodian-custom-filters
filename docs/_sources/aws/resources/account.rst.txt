@@ -200,7 +200,7 @@ in the current region, either as a multi region trail or as a trail with it as t
                 multi-region: true
                 running: true
                 include-management-events: true
-                log-metric-filter-pattern: "{ ($.eventName = "ConsoleLogin") }"
+                log-metric-filter-pattern: "{ ($.eventName = \"ConsoleLogin\") }"
 
 .. container:: toggle
 
