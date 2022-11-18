@@ -245,7 +245,7 @@ corresponding SNS subscription for a specific filter pattern
 
 
 
-Permissions - cloudtrail:DescribeTrails, cloudtrail:GetTrailStatus, cloudtrail:GetEventSelectors, cloudwatch:DescribeAlarms, logs:DescribeMetricFilters, sns:ListSubscriptions
+Permissions - cloudtrail:DescribeTrails, cloudtrail:GetTrailStatus, cloudtrail:GetEventSelectors, cloudwatch:DescribeAlarmsForMetric, logs:DescribeMetricFilters, sns:ListSubscriptions
 
 
 .. _aws.account.filters.check-config:
