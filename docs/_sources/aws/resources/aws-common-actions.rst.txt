@@ -233,7 +233,6 @@ Example::
 
  - type: invoke-lambda
    function: my-function
-   assume-role: iam-role-arn
 
 Note if your synchronously invoking the lambda, you may also need
 to configure the timeout, to avoid multiple invokes. The default
@@ -252,8 +251,6 @@ arguments. Alternatively use async: true
   .. code-block:: yaml
 
     properties:
-      assume-role:
-        type: string
       async:
         type: boolean
       batch_size:
